@@ -17,5 +17,8 @@
 - (void)logFailedLocationUpdate;
 
 - (void)dumpLocationUpdates;
+- (NSArray *)locationUpdates;
+
+- (void)saveContext;
 
 @end

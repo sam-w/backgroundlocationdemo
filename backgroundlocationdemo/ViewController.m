@@ -8,7 +8,12 @@
 
 #import "ViewController.h"
 
+#import "LocationManager.h"
+#import "LocationDataStore.h"
+
 @interface ViewController ()
+
+@property (nonatomic, weak) IBOutlet UILabel *outputLabel;
 
 @end
 
@@ -16,12 +21,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)startTracking:(id)sender {
+    [[LocationManager sharedInstance] startMonitoringSignificantLocationChanges];
+}
+
+- (IBAction)refresh:(id)sender {
+    self.outputLabel.text = [[[LocationDataStore sharedInstance] locationUpdates] componentsJoinedByString:@"\n"];
+}
+
+- (IBAction)log:(id)sender {
+    [[LocationDataStore sharedInstance] dumpLocationUpdates];
 }
 
 @end

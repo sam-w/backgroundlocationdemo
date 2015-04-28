@@ -155,4 +155,24 @@
     }
 }
 
+- (NSArray *)locationUpdates
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"LocationUpdate" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    NSMutableArray *locationUpdates = [NSMutableArray arrayWithCapacity:fetchedObjects.count];
+    for (NSManagedObject *info in fetchedObjects) {
+        if ([[info valueForKey:@"success"] boolValue]) {
+            [locationUpdates addObject:[NSString stringWithFormat:@"%@ - Success (%@, %@)", [info valueForKey:@"timestamp"], [info valueForKey:@"lat"], [info valueForKey:@"lon"]]];
+        }
+        else {
+            [locationUpdates addObject:[NSString stringWithFormat:@"%@ - Failed", [info valueForKey:@"timestamp"]]];
+        }
+    }
+    
+    return locationUpdates;
+}
+
 @end

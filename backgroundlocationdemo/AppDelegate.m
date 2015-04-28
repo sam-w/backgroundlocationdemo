@@ -38,7 +38,7 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    
+    [[LocationDataStore sharedInstance] saveContext];
 }
 
 @end
