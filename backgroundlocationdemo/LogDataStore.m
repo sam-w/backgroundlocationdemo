@@ -6,12 +6,12 @@
 //  Copyright (c) 2015 samw. All rights reserved.
 //
 
-#import "LocationDataStore.h"
+#import "LogDataStore.h"
 
 #import <CoreData/CoreData.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface LocationDataStore ()
+@interface LogDataStore ()
 
 @property (readonly, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, nonatomic) NSManagedObjectModel *managedObjectModel;
@@ -22,11 +22,11 @@
 
 @end
 
-@implementation LocationDataStore
+@implementation LogDataStore
 
 + (instancetype)sharedInstance
 {
-    static LocationDataStore *_sharedInstance;
+    static LogDataStore *_sharedInstance;
     static dispatch_once_t _onceToken;
     dispatch_once(&_onceToken, ^{
         _sharedInstance = [[self alloc] init];
@@ -114,61 +114,96 @@
     }
 }
 
+- (void)clearLog
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"LogLine" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    for (NSManagedObject *object in fetchedObjects) {
+        [self.managedObjectContext deleteObject:object];
+    }
+    
+    [self.managedObjectContext save:nil];
+}
+
 #pragma mark - Storing Locations
+
+- (void)logStartMonitoring
+{
+    NSManagedObject *locationObject = [NSEntityDescription insertNewObjectForEntityForName:@"LogLine" inManagedObjectContext:self.managedObjectContext];
+    [locationObject setValue:@"LocationMonitorStart" forKey:@"status"];
+    [locationObject setValue:[NSDate date] forKey:@"timestamp"];
+    [self.managedObjectContext save:nil];
+}
 
 - (void)logSuccessfulLocationUpdate:(CLLocation *)location
 {
-    NSManagedObject *locationObject = [NSEntityDescription insertNewObjectForEntityForName:@"LocationUpdate" inManagedObjectContext:self.managedObjectContext];
+    NSManagedObject *locationObject = [NSEntityDescription insertNewObjectForEntityForName:@"LogLine" inManagedObjectContext:self.managedObjectContext];
     [locationObject setValue:@(location.coordinate.latitude) forKey:@"lat"];
     [locationObject setValue:@(location.coordinate.longitude) forKey:@"lon"];
-    [locationObject setValue:@YES forKey:@"success"];
+    [locationObject setValue:@"LocationUpdate Success" forKey:@"status"];
     [locationObject setValue:[NSDate date] forKey:@"timestamp"];
     [self.managedObjectContext save:nil];
 }
 
 - (void)logFailedLocationUpdate
 {
-    NSManagedObject *locationObject = [NSEntityDescription insertNewObjectForEntityForName:@"LocationUpdate" inManagedObjectContext:self.managedObjectContext];
-    [locationObject setValue:@(0.0) forKey:@"lat"];
-    [locationObject setValue:@(0.0) forKey:@"lon"];
-    [locationObject setValue:@NO forKey:@"success"];
+    NSManagedObject *locationObject = [NSEntityDescription insertNewObjectForEntityForName:@"LogLine" inManagedObjectContext:self.managedObjectContext];
+    [locationObject setValue:@"LocationUpdate Fail" forKey:@"status"];
     [locationObject setValue:[NSDate date] forKey:@"timestamp"];
     [self.managedObjectContext save:nil];
 }
 
-#pragma mark - Retrieving Locations
-
-- (void)dumpLocationUpdates
+- (void)logDidFinishLaunchingWithLocation
 {
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"LocationUpdate" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
-    for (NSManagedObject *info in fetchedObjects) {
-        if ([[info valueForKey:@"success"] boolValue]) {
-            NSLog(@"%@ - Success (%@, %@)", [info valueForKey:@"timestamp"], [info valueForKey:@"lat"], [info valueForKey:@"lon"]);
-        }
-        else {
-            NSLog(@"%@ - Failed", [info valueForKey:@"timestamp"]);
-        }
-    }
+    NSManagedObject *locationObject = [NSEntityDescription insertNewObjectForEntityForName:@"LogLine" inManagedObjectContext:self.managedObjectContext];
+    [locationObject setValue:@"DidFinishLaunchingWithLocation" forKey:@"status"];
+    [locationObject setValue:[NSDate date] forKey:@"timestamp"];
+    [self.managedObjectContext save:nil];
 }
 
-- (NSArray *)locationUpdates
+- (void)logDidEnterBackground
+{
+    NSManagedObject *locationObject = [NSEntityDescription insertNewObjectForEntityForName:@"LogLine" inManagedObjectContext:self.managedObjectContext];
+    [locationObject setValue:@"DidEnterBackground" forKey:@"status"];
+    [locationObject setValue:[NSDate date] forKey:@"timestamp"];
+    [self.managedObjectContext save:nil];
+}
+
+- (void)logWillEnterForeground
+{
+    NSManagedObject *locationObject = [NSEntityDescription insertNewObjectForEntityForName:@"LogLine" inManagedObjectContext:self.managedObjectContext];
+    [locationObject setValue:@"WillEnterForeground" forKey:@"status"];
+    [locationObject setValue:[NSDate date] forKey:@"timestamp"];
+    [self.managedObjectContext save:nil];
+}
+
+- (void)logWillTerminate
+{
+    NSManagedObject *locationObject = [NSEntityDescription insertNewObjectForEntityForName:@"LogLine" inManagedObjectContext:self.managedObjectContext];
+    [locationObject setValue:@"WillTerminate" forKey:@"status"];
+    [locationObject setValue:[NSDate date] forKey:@"timestamp"];
+    [self.managedObjectContext save:nil];
+}
+
+#pragma mark - Retrieving Log
+
+- (NSArray *)logLines
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"LocationUpdate" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"LogLine" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
     NSMutableArray *locationUpdates = [NSMutableArray arrayWithCapacity:fetchedObjects.count];
-    for (NSManagedObject *info in fetchedObjects) {
-        if ([[info valueForKey:@"success"] boolValue]) {
-            [locationUpdates addObject:[NSString stringWithFormat:@"%@ - Success (%@, %@)", [info valueForKey:@"timestamp"], [info valueForKey:@"lat"], [info valueForKey:@"lon"]]];
+    for (NSManagedObject *object in fetchedObjects) {
+        if ([[object valueForKey:@"status"] isEqualToString:@"LocationUpdate Success"])  {
+            [locationUpdates addObject:[NSString stringWithFormat:@"%@ - %@ (%@, %@)", [object valueForKey:@"timestamp"], [object valueForKey:@"status"], [object valueForKey:@"lat"], [object valueForKey:@"lon"]]];
         }
         else {
-            [locationUpdates addObject:[NSString stringWithFormat:@"%@ - Failed", [info valueForKey:@"timestamp"]]];
+            [locationUpdates addObject:[NSString stringWithFormat:@"%@ - %@", [object valueForKey:@"timestamp"], [object valueForKey:@"status"]]];
         }
     }
     

@@ -15,19 +15,9 @@
 		296776C01AEF162B0080EEAE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296776BF1AEF162B0080EEAE /* Images.xcassets */; };
 		296776C31AEF162B0080EEAE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 296776C11AEF162B0080EEAE /* LaunchScreen.xib */; };
 		296776CF1AEF162B0080EEAE /* backgroundlocationdemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 296776CE1AEF162B0080EEAE /* backgroundlocationdemoTests.m */; };
-		296776E31AEF18370080EEAE /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 296776E21AEF18370080EEAE /* InterfaceController.m */; };
-		296776E61AEF18370080EEAE /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 296776E51AEF18370080EEAE /* NotificationController.m */; };
-		296776E91AEF18370080EEAE /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 296776E81AEF18370080EEAE /* GlanceController.m */; };
-		296776EB1AEF18370080EEAE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296776EA1AEF18370080EEAE /* Images.xcassets */; };
-		296776EF1AEF18380080EEAE /* backgroundlocationdemo WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 296776EE1AEF18380080EEAE /* backgroundlocationdemo WatchKit App.app */; };
-		296776F71AEF18380080EEAE /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296776F51AEF18380080EEAE /* Interface.storyboard */; };
-		296776F91AEF18380080EEAE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296776F81AEF18380080EEAE /* Images.xcassets */; };
-		296776FC1AEF18380080EEAE /* backgroundlocationdemo WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 296776DC1AEF18370080EEAE /* backgroundlocationdemo WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		296777051AEF18470080EEAE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 296777041AEF18470080EEAE /* MapKit.framework */; };
 		2967770A1AEF19490080EEAE /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 296777091AEF19490080EEAE /* LocationManager.m */; };
-		2967770D1AEF1A4F0080EEAE /* NSUserDefaults+WatchGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 2967770C1AEF1A4F0080EEAE /* NSUserDefaults+WatchGroup.m */; };
-		2967770E1AEF1A4F0080EEAE /* NSUserDefaults+WatchGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 2967770C1AEF1A4F0080EEAE /* NSUserDefaults+WatchGroup.m */; };
-		296777111AEF247C0080EEAE /* LocationDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 296777101AEF247C0080EEAE /* LocationDataStore.m */; };
+		296777111AEF247C0080EEAE /* LogDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 296777101AEF247C0080EEAE /* LogDataStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,20 +28,6 @@
 			remoteGlobalIDString = 296776AB1AEF162B0080EEAE;
 			remoteInfo = backgroundlocationdemo;
 		};
-		296776F01AEF18380080EEAE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 296776A41AEF162B0080EEAE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 296776ED1AEF18380080EEAE;
-			remoteInfo = "backgroundlocationdemo WatchKit App";
-		};
-		296776FA1AEF18380080EEAE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 296776A41AEF162B0080EEAE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 296776DB1AEF18370080EEAE;
-			remoteInfo = "backgroundlocationdemo WatchKit Extension";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,7 +37,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				296776FC1AEF18380080EEAE /* backgroundlocationdemo WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,29 +58,12 @@
 		296776C81AEF162B0080EEAE /* backgroundlocationdemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = backgroundlocationdemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		296776CD1AEF162B0080EEAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		296776CE1AEF162B0080EEAE /* backgroundlocationdemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = backgroundlocationdemoTests.m; sourceTree = "<group>"; };
-		296776DC1AEF18370080EEAE /* backgroundlocationdemo WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "backgroundlocationdemo WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		296776DF1AEF18370080EEAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		296776E01AEF18370080EEAE /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		296776E11AEF18370080EEAE /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
-		296776E21AEF18370080EEAE /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
-		296776E41AEF18370080EEAE /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
-		296776E51AEF18370080EEAE /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
-		296776E71AEF18370080EEAE /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
-		296776E81AEF18370080EEAE /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
-		296776EA1AEF18370080EEAE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		296776EE1AEF18380080EEAE /* backgroundlocationdemo WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "backgroundlocationdemo WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		296776F41AEF18380080EEAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		296776F61AEF18380080EEAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		296776F81AEF18380080EEAE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		296777041AEF18470080EEAE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		296777061AEF184F0080EEAE /* backgroundlocationdemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = backgroundlocationdemo.entitlements; sourceTree = "<group>"; };
-		296777071AEF18900080EEAE /* backgroundlocationdemo WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "backgroundlocationdemo WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		296777081AEF19490080EEAE /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		296777091AEF19490080EEAE /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
-		2967770B1AEF1A4F0080EEAE /* NSUserDefaults+WatchGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+WatchGroup.h"; sourceTree = "<group>"; };
-		2967770C1AEF1A4F0080EEAE /* NSUserDefaults+WatchGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+WatchGroup.m"; sourceTree = "<group>"; };
-		2967770F1AEF247C0080EEAE /* LocationDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDataStore.h; sourceTree = "<group>"; };
-		296777101AEF247C0080EEAE /* LocationDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDataStore.m; sourceTree = "<group>"; };
+		2967770F1AEF247C0080EEAE /* LogDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogDataStore.h; sourceTree = "<group>"; };
+		296777101AEF247C0080EEAE /* LogDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogDataStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,26 +82,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		296776D91AEF18370080EEAE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		296776A31AEF162B0080EEAE = {
 			isa = PBXGroup;
 			children = (
-				2967770B1AEF1A4F0080EEAE /* NSUserDefaults+WatchGroup.h */,
-				2967770C1AEF1A4F0080EEAE /* NSUserDefaults+WatchGroup.m */,
 				296777041AEF18470080EEAE /* MapKit.framework */,
 				296776AE1AEF162B0080EEAE /* backgroundlocationdemo */,
 				296776CB1AEF162B0080EEAE /* backgroundlocationdemoTests */,
-				296776DD1AEF18370080EEAE /* backgroundlocationdemo WatchKit Extension */,
-				296776F21AEF18380080EEAE /* backgroundlocationdemo WatchKit App */,
 				296776AD1AEF162B0080EEAE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -153,8 +100,6 @@
 			children = (
 				296776AC1AEF162B0080EEAE /* backgroundlocationdemo.app */,
 				296776C81AEF162B0080EEAE /* backgroundlocationdemoTests.xctest */,
-				296776DC1AEF18370080EEAE /* backgroundlocationdemo WatchKit Extension.appex */,
-				296776EE1AEF18380080EEAE /* backgroundlocationdemo WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,8 +118,8 @@
 				296776BF1AEF162B0080EEAE /* Images.xcassets */,
 				296776C11AEF162B0080EEAE /* LaunchScreen.xib */,
 				296776B61AEF162B0080EEAE /* backgroundlocationdemo.xcdatamodeld */,
-				2967770F1AEF247C0080EEAE /* LocationDataStore.h */,
-				296777101AEF247C0080EEAE /* LocationDataStore.m */,
+				2967770F1AEF247C0080EEAE /* LogDataStore.h */,
+				296777101AEF247C0080EEAE /* LogDataStore.m */,
 				296776AF1AEF162B0080EEAE /* Supporting Files */,
 			);
 			path = backgroundlocationdemo;
@@ -206,49 +151,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		296776DD1AEF18370080EEAE /* backgroundlocationdemo WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				296777071AEF18900080EEAE /* backgroundlocationdemo WatchKit Extension.entitlements */,
-				296776E11AEF18370080EEAE /* InterfaceController.h */,
-				296776E21AEF18370080EEAE /* InterfaceController.m */,
-				296776E41AEF18370080EEAE /* NotificationController.h */,
-				296776E51AEF18370080EEAE /* NotificationController.m */,
-				296776E71AEF18370080EEAE /* GlanceController.h */,
-				296776E81AEF18370080EEAE /* GlanceController.m */,
-				296776EA1AEF18370080EEAE /* Images.xcassets */,
-				296776DE1AEF18370080EEAE /* Supporting Files */,
-			);
-			path = "backgroundlocationdemo WatchKit Extension";
-			sourceTree = "<group>";
-		};
-		296776DE1AEF18370080EEAE /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				296776DF1AEF18370080EEAE /* Info.plist */,
-				296776E01AEF18370080EEAE /* PushNotificationPayload.apns */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		296776F21AEF18380080EEAE /* backgroundlocationdemo WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				296776F51AEF18380080EEAE /* Interface.storyboard */,
-				296776F81AEF18380080EEAE /* Images.xcassets */,
-				296776F31AEF18380080EEAE /* Supporting Files */,
-			);
-			path = "backgroundlocationdemo WatchKit App";
-			sourceTree = "<group>";
-		};
-		296776F31AEF18380080EEAE /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				296776F41AEF18380080EEAE /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -264,7 +166,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				296776FB1AEF18380080EEAE /* PBXTargetDependency */,
 			);
 			name = backgroundlocationdemo;
 			productName = backgroundlocationdemo;
@@ -289,39 +190,6 @@
 			productReference = 296776C81AEF162B0080EEAE /* backgroundlocationdemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		296776DB1AEF18370080EEAE /* backgroundlocationdemo WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 296777001AEF18380080EEAE /* Build configuration list for PBXNativeTarget "backgroundlocationdemo WatchKit Extension" */;
-			buildPhases = (
-				296776D81AEF18370080EEAE /* Sources */,
-				296776D91AEF18370080EEAE /* Frameworks */,
-				296776DA1AEF18370080EEAE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				296776F11AEF18380080EEAE /* PBXTargetDependency */,
-			);
-			name = "backgroundlocationdemo WatchKit Extension";
-			productName = "backgroundlocationdemo WatchKit Extension";
-			productReference = 296776DC1AEF18370080EEAE /* backgroundlocationdemo WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit-extension";
-		};
-		296776ED1AEF18380080EEAE /* backgroundlocationdemo WatchKit App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 296776FD1AEF18380080EEAE /* Build configuration list for PBXNativeTarget "backgroundlocationdemo WatchKit App" */;
-			buildPhases = (
-				296776EC1AEF18380080EEAE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "backgroundlocationdemo WatchKit App";
-			productName = "backgroundlocationdemo WatchKit App";
-			productReference = 296776EE1AEF18380080EEAE /* backgroundlocationdemo WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -336,7 +204,7 @@
 						DevelopmentTeam = VFJT3FX6NA;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -349,18 +217,6 @@
 					296776C71AEF162B0080EEAE = {
 						CreatedOnToolsVersion = 6.3;
 						TestTargetID = 296776AB1AEF162B0080EEAE;
-					};
-					296776DB1AEF18370080EEAE = {
-						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = VFJT3FX6NA;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
-					296776ED1AEF18380080EEAE = {
-						CreatedOnToolsVersion = 6.3;
 					};
 				};
 			};
@@ -379,8 +235,6 @@
 			targets = (
 				296776AB1AEF162B0080EEAE /* backgroundlocationdemo */,
 				296776C71AEF162B0080EEAE /* backgroundlocationdemoTests */,
-				296776DB1AEF18370080EEAE /* backgroundlocationdemo WatchKit Extension */,
-				296776ED1AEF18380080EEAE /* backgroundlocationdemo WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -403,24 +257,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		296776DA1AEF18370080EEAE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				296776EF1AEF18380080EEAE /* backgroundlocationdemo WatchKit App.app in Resources */,
-				296776EB1AEF18370080EEAE /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		296776EC1AEF18380080EEAE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				296776F71AEF18380080EEAE /* Interface.storyboard in Resources */,
-				296776F91AEF18380080EEAE /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -431,10 +267,9 @@
 				296776B51AEF162B0080EEAE /* AppDelegate.m in Sources */,
 				2967770A1AEF19490080EEAE /* LocationManager.m in Sources */,
 				296776B81AEF162B0080EEAE /* backgroundlocationdemo.xcdatamodeld in Sources */,
-				2967770D1AEF1A4F0080EEAE /* NSUserDefaults+WatchGroup.m in Sources */,
 				296776BB1AEF162B0080EEAE /* ViewController.m in Sources */,
 				296776B21AEF162B0080EEAE /* main.m in Sources */,
-				296777111AEF247C0080EEAE /* LocationDataStore.m in Sources */,
+				296777111AEF247C0080EEAE /* LogDataStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,17 +281,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		296776D81AEF18370080EEAE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				296776E61AEF18370080EEAE /* NotificationController.m in Sources */,
-				2967770E1AEF1A4F0080EEAE /* NSUserDefaults+WatchGroup.m in Sources */,
-				296776E31AEF18370080EEAE /* InterfaceController.m in Sources */,
-				296776E91AEF18370080EEAE /* GlanceController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -464,16 +288,6 @@
 			isa = PBXTargetDependency;
 			target = 296776AB1AEF162B0080EEAE /* backgroundlocationdemo */;
 			targetProxy = 296776C91AEF162B0080EEAE /* PBXContainerItemProxy */;
-		};
-		296776F11AEF18380080EEAE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 296776ED1AEF18380080EEAE /* backgroundlocationdemo WatchKit App */;
-			targetProxy = 296776F01AEF18380080EEAE /* PBXContainerItemProxy */;
-		};
-		296776FB1AEF18380080EEAE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 296776DB1AEF18370080EEAE /* backgroundlocationdemo WatchKit Extension */;
-			targetProxy = 296776FA1AEF18380080EEAE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -492,14 +306,6 @@
 				296776C21AEF162B0080EEAE /* Base */,
 			);
 			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-		296776F51AEF18380080EEAE /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				296776F61AEF18380080EEAE /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -589,7 +395,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = backgroundlocationdemo/backgroundlocationdemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = backgroundlocationdemo/Info.plist;
@@ -603,7 +408,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = backgroundlocationdemo/backgroundlocationdemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = backgroundlocationdemo/Info.plist;
@@ -647,70 +451,6 @@
 			};
 			name = Release;
 		};
-		296776FE1AEF18380080EEAE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				IBSC_MODULE = backgroundlocationdemo_WatchKit_Extension;
-				INFOPLIST_FILE = "backgroundlocationdemo WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
-			};
-			name = Debug;
-		};
-		296776FF1AEF18380080EEAE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				IBSC_MODULE = backgroundlocationdemo_WatchKit_Extension;
-				INFOPLIST_FILE = "backgroundlocationdemo WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
-			};
-			name = Release;
-		};
-		296777011AEF18380080EEAE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "backgroundlocationdemo WatchKit Extension/backgroundlocationdemo WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "backgroundlocationdemo WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		296777021AEF18380080EEAE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "backgroundlocationdemo WatchKit Extension/backgroundlocationdemo WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = "backgroundlocationdemo WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -730,6 +470,7 @@
 				296776D41AEF162B0080EEAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		296776D51AEF162B0080EEAE /* Build configuration list for PBXNativeTarget "backgroundlocationdemoTests" */ = {
 			isa = XCConfigurationList;
@@ -738,22 +479,7 @@
 				296776D71AEF162B0080EEAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		296776FD1AEF18380080EEAE /* Build configuration list for PBXNativeTarget "backgroundlocationdemo WatchKit App" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				296776FE1AEF18380080EEAE /* Debug */,
-				296776FF1AEF18380080EEAE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		296777001AEF18380080EEAE /* Build configuration list for PBXNativeTarget "backgroundlocationdemo WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				296777011AEF18380080EEAE /* Debug */,
-				296777021AEF18380080EEAE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

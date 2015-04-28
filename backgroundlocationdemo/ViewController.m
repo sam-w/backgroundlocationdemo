@@ -9,11 +9,11 @@
 #import "ViewController.h"
 
 #import "LocationManager.h"
-#import "LocationDataStore.h"
+#import "LogDataStore.h"
 
 @interface ViewController ()
 
-@property (nonatomic, weak) IBOutlet UILabel *outputLabel;
+@property (nonatomic, weak) IBOutlet UITextView *logTextView;
 
 @end
 
@@ -21,18 +21,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.logTextView.text = @"";
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self refresh:nil];
 }
 
 - (IBAction)startTracking:(id)sender {
     [[LocationManager sharedInstance] startMonitoringSignificantLocationChanges];
 }
 
-- (IBAction)refresh:(id)sender {
-    self.outputLabel.text = [[[LocationDataStore sharedInstance] locationUpdates] componentsJoinedByString:@"\n"];
+- (IBAction)clearLog:(id)sender {
+    [[LogDataStore sharedInstance] clearLog];
 }
 
-- (IBAction)log:(id)sender {
-    [[LocationDataStore sharedInstance] dumpLocationUpdates];
+- (IBAction)refresh:(id)sender {
+    self.logTextView.text = [[[LogDataStore sharedInstance] logLines] componentsJoinedByString:@"\n"];
 }
 
 @end

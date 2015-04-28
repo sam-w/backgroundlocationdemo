@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 #import "LocationManager.h"
-#import "LocationDataStore.h"
+#import "LogDataStore.h"
 
 @interface AppDelegate ()
 
@@ -17,9 +17,9 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     if (launchOptions[UIApplicationLaunchOptionsLocationKey]) {
+        [[LogDataStore sharedInstance] logDidFinishLaunchingWithLocation];
         [[LocationManager sharedInstance] startMonitoringSignificantLocationChanges];
     }
     return YES;
@@ -29,16 +29,16 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    [[LogDataStore sharedInstance] logDidEnterBackground];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [[LogDataStore sharedInstance] logWillEnterForeground];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    [[LocationDataStore sharedInstance] saveContext];
+    [[LogDataStore sharedInstance] logWillTerminate];
+    [[LogDataStore sharedInstance] saveContext];
 }
 
 @end

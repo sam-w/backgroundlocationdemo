@@ -8,8 +8,7 @@
 
 #import "LocationManager.h"
 
-#import "LocationDataStore.h"
-#import "NSUserDefaults+WatchGroup.h"
+#import "LogDataStore.h"
 
 @interface LocationManager () <CLLocationManagerDelegate>
 
@@ -63,6 +62,7 @@
         }
     }
     if ([CLLocationManager locationServicesEnabled]) {
+        [[LogDataStore sharedInstance] logStartMonitoring];
         [self.locationManager startMonitoringSignificantLocationChanges];
     }
 }
@@ -95,13 +95,13 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     for (CLLocation *location in locations) {
-        [[LocationDataStore sharedInstance] logSuccessfulLocationUpdate:location];
+        [[LogDataStore sharedInstance] logSuccessfulLocationUpdate:location];
     }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    [[LocationDataStore sharedInstance] logFailedLocationUpdate];
+    [[LogDataStore sharedInstance] logFailedLocationUpdate];
 }
 
 @end

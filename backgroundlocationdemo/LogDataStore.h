@@ -9,16 +9,22 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface LocationDataStore : NSObject
+@interface LogDataStore : NSObject
 
 + (instancetype)sharedInstance;
 
+- (void)logStartMonitoring;
 - (void)logSuccessfulLocationUpdate:(CLLocation *)location;
 - (void)logFailedLocationUpdate;
+- (void)logDidFinishLaunchingWithLocation;
+- (void)logDidEnterBackground;
+- (void)logWillEnterForeground;
+- (void)logWillTerminate;
 
-- (void)dumpLocationUpdates;
-- (NSArray *)locationUpdates;
 
+- (NSArray *)logLines;
+
+- (void)clearLog;
 - (void)saveContext;
 
 @end
