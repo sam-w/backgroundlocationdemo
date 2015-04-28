@@ -1,8 +1,4 @@
-Pods
-backgroundlocationdemo.xcworkspace
-backgroundlocationdemo.xcodeproj/xcuserdata
-backgroundlocationdemo.xcodeproj/project.xcworkspace
-backgroundlocationdemo.xcworkspace
-backgroundlocationdemo.xcodeproj/xcuserdata
-backgroundlocationdemo.xcodeproj/project.xcworkspace
+Pods/
+*.xcworkspace
+xcuserdata
 .DS_Store
