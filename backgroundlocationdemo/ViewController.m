@@ -24,11 +24,6 @@
     self.logTextView.text = @"";
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self refresh:nil];
-}
-
 - (IBAction)startTracking:(id)sender {
     [[LocationManager sharedInstance] startMonitoringSignificantLocationChanges];
 }
